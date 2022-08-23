@@ -1,0 +1,45 @@
+* {
+    box-sizing: border-box;
+}
+
+.card {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 200px;
+    height: 200px;
+    font-size: 35px;
+    color: white;
+    margin-top: -100px;
+    margin-left: -100px;
+    font-family: sans-serif;
+    transition: transform 1s;
+    transform-style: preserve-3d;
+}
+
+.card:hover {
+    transform:  rotateY(-180deg);
+}
+
+.card::before,
+.card::after {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    backface-visibility: hidden;
+}
+
+.card::before {
+    content: "Front";
+    background-color: #fa3664;
+}
+
+.card::after {
+    content: "Back";
+    background-color: #2196f3;
+    transform: rotateY(180deg);
+}
